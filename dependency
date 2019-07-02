@@ -1,0 +1,7 @@
+
+CREATE TABLE accounts (
+    email character varying(49) NOT NULL,
+    password character varying(49) NOT NULL,
+    token character varying(49)
+);
+
