@@ -1,0 +1,28 @@
+
+curl -XGET http://localhost:5000/api/bank/GHATKOPAR/MUMBAI -d '{"limit":1,"offset":0}'
+
+curl -XGET http://localhost:5000/api/bank/ABHY0065001
+
+curl -XGET http://localhost:5000/api/banks/GHATKOPAR/MUMBAI -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjB9.3uRY3y55Zpdmj5crJWp8QoM4CxtxCQl5qfDpX5iyKRQ'
+
+curl _XPOST http://localhost:5000/v1/user/new -d '{"email":"test@gmail.com","password":"test123"}'
+
+
+{"account":{"ID":3,"CreatedAt":"2019-06-24T23:32:14.866926628+05:30","UpdatedAt":"2019-06-24T23:32:14.866926628+05:30",
+"DeletedAt":null,"email":"test@gmail.com","password":"",
+"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjB9.WNqU0fM7k78bOV9BbOu8_rX-8RAH_tAPq1paPXmbR7Q"},"message":"Account has been created","status":true}
+
+
+curl -XGET http://localhost:5000/api/bank/ABHY0065001 -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySUQiOjB9.WNqU0fM7k78bOV9BbOu8_rX-8RAH_tAPq1paPXmbR7Q'
+
+
+curl -XGET http://localhost:5000/v1/user/gettoken -d '{"email":"test@gmail.com"}'
+
+
+
+curl -XPUT http://localhost:5000/v1/user/updatetoken -d '{"email":"test@gmail.com"}'
+
+
+
+
+

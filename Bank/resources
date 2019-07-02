@@ -1,0 +1,66 @@
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+sudo passwd postgres
+
+Login to the sql console 
+------------------------
+sudo -i -u postgres
+
+
+go to the the postgres console
+==============================
+psql postgres
+
+to exit = \q
+
+
+createdb dummy
+
+
+
+PostgreSQL is one of the best database engines for an average web project and many who moves to psql from mysql (for example) often ask the following questions: what  is the analog of “show tables” in postgres? or how can I get the list of databases in postgres like “show databases” in mysql? The answers are short:
+
+mysql: SHOW TABLES
+postgresql: \d
+postgresql: SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+mysql: SHOW DATABASES
+postgresql: \l
+postgresql: SELECT datname FROM pg_database;
+
+mysql: SHOW COLUMNS
+postgresql: \d table
+postgresql: SELECT column_name FROM information_schema.columns WHERE table_name ='table';
+
+mysql: DESCRIBE TABLE
+postgresql: \d+ table
+postgresql: SELECT column_name FROM information_schema.columns WHERE table_name ='table';
+
+
+for postgres : follow : https://chartio.com/resources/tutorials/how-to-set-the-default-user-password-in-postgresql/
+
+CREATE TABLE accounts (
+    email character varying(49) NOT NULL,
+    password character varying(49) NOT NULL,
+    token character varying(49)
+);
+
+COPY accounts (email, password) FROM stdin;
+dummy@gmail.com	dummy123
+temp@gmail.com	temp123
+\.
+
+
+select db \c db name 
+
+create user dummy1 with encrypted password 'dummy1';
+
+
+delete a table 
+drop table accounts;
+
+
+kill the program
+kill -9 $(lsof -i TCP:8000 | grep LISTEN | awk '{print $2}')
+
